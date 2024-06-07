@@ -5,7 +5,7 @@ This is a Web App Developed as a project using ReactJs. It allows users to searc
 
 
 ## Live Demo 
-- Click [here]([LINK](https://generate-weather-app.netlify.app)) to view the live demo.
+- Click [here](https://generate-weather-app.netlify.app/) to view the live demo.
 
 <br/>
 
