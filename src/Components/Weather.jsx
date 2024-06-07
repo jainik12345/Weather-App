@@ -12,9 +12,7 @@ import { useState } from "react";
 import { useRef } from "react";
 
 const Weather = () => {
-
-
-  const inputRef = useRef()
+  const inputRef = useRef();
 
   const [weatherData, setWeatherData] = useState(false);
 
@@ -36,25 +34,22 @@ const Weather = () => {
   };
 
   const search = async (city) => {
-
-
-    if(city === ""){
+    if (city === "") {
       alert("Enter City Name");
-      return;   
+      return;
     }
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${ 
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
         import.meta.env.VITE_APP_ID
       }`;
 
       const response = await fetch(url);
       const data = await response.json();
 
-      if(!response.ok){
+      if (!response.ok) {
         alert("data.message");
         return;
       }
-
 
       console.log(data);
       const icon = allIcons[data.weather[0].icon] || clear_icon;
@@ -71,43 +66,46 @@ const Weather = () => {
     }
   };
 
-useEffect( ()=>{
-  search("Ahmedabad");
-},[] )
+  useEffect(() => {
+    search("Ahmedabad");
+  }, []);
 
   return (
     <div className="weather">
       <div className="search-bar">
         <input ref={inputRef} type="text" placeholder="Search" />
-        <img src={search_icon} alt="Search Icon" onClick={()=>search(inputRef.current.value)} />
-      </div> 
-
-      {weatherData ? <>
-
-        <img src={weatherData.icon} alt="" className="weather-icon" />
-      <p className="temperature">{weatherData.temperature}°C</p>
-      <p className="location">{weatherData.location}</p>
-      <div className="weather-data">
-        <div className="col">
-          <img src={humidity_icon} alt="" />
-          <div>
-            <p>{weatherData.humdity} %</p>
-            <span>Humidity</span>
-          </div>
-        </div>
-        <div className="col">
-          <img src={wind_icon} alt="" />
-          <div>
-            <p>{weatherData.WindSpeed} Km/h</p>
-            <span>Wind Speed</span>
-          </div>
-        </div>
+        <img
+          src={search_icon}
+          alt="Search Icon"
+          onClick={() => search(inputRef.current.value)}
+        />
       </div>
-      
-      </> : <></>}
 
-
-      
+      {weatherData ? (
+        <>
+          <img src={weatherData.icon} alt="" className="weather-icon" />
+          <p className="temperature">{weatherData.temperature}°C</p>
+          <p className="location">{weatherData.location}</p>
+          <div className="weather-data">
+            <div className="col">
+              <img src={humidity_icon} alt="" />
+              <div>
+                <p>{weatherData.humdity} %</p>
+                <span>Humidity</span>
+              </div>
+            </div>
+            <div className="col">
+              <img src={wind_icon} alt="" />
+              <div>
+                <p>{weatherData.WindSpeed} Km/h</p>
+                <span>Wind Speed</span>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
