@@ -1,18 +1,20 @@
 # React Weather-App
 
-This is a web app developed as a final project for SheCodes React using React.js. It allows users to search for the weather conditions of any city in the world and provides current weather information. 
+This is a Web App Developed as a project using ReactJs. It allows users to search for the weather conditions of any city in the world and provides current weather information. 
 
-The App fetches weather data using the SheCodes Weather API.
+
 
 ## Live Demo 
-- Click [here](https://generate-portfolio.netlify.app/) to view the live demo.
+- Click [here](LINK) to view the live demo.
 
 <br/>
 
 ## Features
 - Users can search for weather conditions of any city in the world.
+- Track the atmospheric conditions of any country or city.
+- Automatically track the weather of any saved location.
+- Free and open-source.
 - The app displays the current weather conditions, including temperature and weather description.
-- The app utilizes the SheCodes Weather API to fetch weather data.
 
 <br/>
 
@@ -28,12 +30,12 @@ The App fetches weather data using the SheCodes Weather API.
 1. Fork the Project and clone Repository using git clone
 
 ```
-https://github.com/jainik12345/Whether-App.git
+https://github.com/jainik12345/Weather-App.git
 ```
 2. Navigate to the project directory:
 
 ```
-cd whether-app
+cd weather-app
 ```
 3.  Install all dependency in package.json
 
